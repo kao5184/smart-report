@@ -333,7 +333,9 @@ class ReporterRepository extends BaseRefreshRepository
 
         $total = $builder->count();
         // dd($total);
-        $items = $builder->forPage($page, $limit)
+        $items = $builder
+            ->orderBy('id', 'desc')
+            ->forPage($page, $limit)
             ->get()
             ->toArray();
 
@@ -458,6 +460,7 @@ class ReporterRepository extends BaseRefreshRepository
         $items = $builder->select([
             'dynamic_reporter_pages.*'
         ])
+            ->orderBy('id', 'desc')
             ->forPage($page, $limit)
             ->get()
             ->map(function ($item) {
@@ -518,6 +521,7 @@ class ReporterRepository extends BaseRefreshRepository
         }
 
         $items = $builder
+            ->orderBy('id', 'desc')
             ->forPage($page, $limit)
             ->get()
             ->map(function ($item) {
