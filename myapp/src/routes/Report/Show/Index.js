@@ -1,17 +1,17 @@
-import React from 'react';
-import { connect } from 'dva';
-import styles from '../Report.css';
+import React from 'react'
+import { connect } from 'dva'
+import styles from '../Report.css'
 
 function Report() {
   return (
     <div className={styles.normal}>
-      Route Component: Report
+      Route Component: Show Index
     </div>
-  );
+  )
 }
 
 function mapStateToProps() {
-  return {};
+  return {}
 }
 
-export default connect(mapStateToProps)(Report);
+export default connect(mapStateToProps)(Report)
